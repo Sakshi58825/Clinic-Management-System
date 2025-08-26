@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Login - Clinic Management System</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Common styling -->
+    <link rel="stylesheet" href="css/doctor2.css"> <!-- Reusing login2.css for form styling -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="login-page">
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Clinic Management System
+            <span id="authStatusMessage" style="margin-left: 15px; color: #ffeb3b; font-size: 0.9em; font-weight: normal;"></span>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li id="signupNavLinkContainer"><a href="signup.html">Sign Up</a></li>
+            <li class="dropdown" id="loginDropdownContainer">
+                <a href="javascript:void(0)">Login ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="admin.html">Main Login</a></li>
+                    <li><a href="doctor.html" class="active">Doctor Login</a></li>
+                    <li><a href="receptionist.html">Receptionist Login</a></li>
+                </ul>
+            </li>
+            <li id="profileNavLinkContainer" style="display: none;"><a href="profile.html">Profile</a></li>
+            <li id="logoutNavLinkContainer" style="display: none;"><a href="#">Logout</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Header Text -->
+    <header class="login-header">
+        <h1><i class="fa-solid fa-user-md"></i> Doctor Login</h1>
+        <p>Login to your Doctor dashboard.</p>
+    </header>
+
+    <!-- Login Form -->
+    <div class="login-center">
+        <div class="login-box">
+            <h2>Doctor Login</h2>
+            <form id="doctorLoginForm">
+                <label>Email</label>
+                <input type="email" id="doctorEmail" placeholder="Enter your email" required />
+
+                <label>Password</label>
+                <input type="password" id="doctorPassword" placeholder="Enter your password" required />
+
+                <p id="doctorLoginMessage" style="color: #ff5722; text-align: center; margin-bottom: 15px;"></p>
+
+                <button type="submit"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
+            </form>
+            <p class="signup-link">Don't have an account? <a href="signup.html">Sign Up</a></p>
+        </div>
+    </div>
+
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/guard.js"></script>
+    <script type="module" src="js/navbar.js"></script> <!-- NEW: Add this line -->
+    <script type="module" src="js/doctor_login.js"></script> <!-- Associated JS for doctor.html -->
+</body>
+</html>

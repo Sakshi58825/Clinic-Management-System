@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinic Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Clinic Management System
+            <span id="authStatusMessage" style="margin-left: 15px; color: #ffeb3b; font-size: 0.9em; font-weight: normal;"></span>
+        </div>
+
+        <ul>
+            <li id="homeNavLinkContainer"><a href="index.html">Home</a></li>
+            <li id="signupNavLinkContainer"><a href="signup.html">Sign Up</a></li>
+            <li class="dropdown" id="loginDropdownContainer">
+                <a href="javascript:void(0)">Login ▾</a>
+                <ul class="dropdown-menu">
+                     <li><a href="login.html">Main Login</a></li> 
+                    <li><a href="admin.html" id="adminLoginLink">Admin Login</a></li>
+                    <li><a href="doctor.html" id="doctorLoginLink">Doctor Login</a></li>
+                    <li><a href="receptionist.html" id="receptionistLoginLink">Receptionist Login</a></li>
+                </ul>
+            </li>
+            <!-- NEW LINKS HERE for Patient-related pages -->
+            <li><a href="patient_registration.html">Register Patient</a></li>
+            <li><a href="patient_queue.html">Patient Queue</a></li>
+            <li><a href="add_prescription.html">Add Prescription</a></li>
+            
+            <!-- APPOINTMENTS LINK ADDED HERE IN NAVBAR -->
+           <li class="dropdown">
+    <a href="javascript:void(0)" class="active">Appointments ▾</a>
+    <ul class="dropdown-menu">
+        <li><a href="appointment.html">Book Appointment</a></li>
+        <li><a href="view_appointment.html">View Appointments</a></li>
+    </ul>
+</li>
+
+            
+            <li><a href="prescription.html">Prescriptions</a></li>
+            <li id="profileNavLinkContainer" style="display: none;"><a href="profile.html">Profile</a></li>
+            <li id="logoutNavLinkContainer" style="display: none;"><a href="#">Logout</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Welcome to Clinic Management System</h1>
+        <p>Efficient, Secure, and Professional Healthcare Management</p>
+    </header>
+
+    <!-- Features -->
+<section class="features">
+    <h2>Key Features</h2>
+    <div class="feature-list">
+        <a href="appointment.html" class="feature protected-feature">📅 Easy Appointment Booking</a>
+        <a href="prescription.html" class="feature protected-feature">💊 Digital Prescription Records</a>
+        <a href="patient_registration.html" class="feature protected-feature">📝 Patient Registration & Tokens</a>
+        <a href="patient_queue.html" class="feature protected-feature">👥 Patient Queue & Status</a>
+        <a href="doctor_profile.html" class="feature protected-feature">👨‍⚕️ Doctor & Patient Profiles</a>
+        <a href="patient_history.html" class="feature protected-feature">📂 Patient History Management</a>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Clinic Management System | All Rights Reserved</p>
+    </footer>
+
+    <!-- JavaScript files -->
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/index.js"></script>
+    <script type="module" src="js/navbar.js"></script> <!-- NEW: Add this line -->
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Profile - Clinic Management System</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Common styling -->
+    <link rel="stylesheet" href="css/patient_profile.css"> <!-- Specific styling for this page -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Clinic Management System
+            <span id="authStatusMessage" style="margin-left: 15px; color: #ffeb3b; font-size: 0.9em; font-weight: normal;"></span>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li id="signupNavLinkContainer" style="display: none;"><a href="signup.html">Sign Up</a></li>
+            <li class="dropdown" id="loginDropdownContainer" style="display: none;">
+                <a href="javascript:void(0)">Login ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="login.html">Main Login</a></li>
+                    <li><a href="admin.html">Admin Login</a></li>
+                    <li><a href="doctor.html">Doctor Login</a></li>
+                    <li><a href="receptionist.html">Receptionist Login</a></li>
+                </ul>
+            </li>
+            <li><a href="patient_registration.html">Register Patient</a></li>
+            <li><a href="patient_queue.html">Patient Queue</a></li>
+            <li><a href="add_prescription.html">Add Prescription</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)">Appointments ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="appointment.html">Book Appointment</a></li>
+                    <li><a href="view_appointment.html">View Appointments</a></li>
+                </ul>
+            </li>
+            <li><a href="prescription.html">Prescriptions</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="active">Patient Data ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="patient_profile.html" class="active">Patient Profile</a></li>
+                    <!-- Add other patient data links here if needed -->
+                </ul>
+            </li>
+            <li id="profileNavLinkContainer" style="display: none;"><a href="profile.html">Profile</a></li>
+            <li id="logoutNavLinkContainer" style="display: none;"><a href="#">Logout</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content wrapper -->
+    <div id="mainContent" style="display: none;">
+        <header class="page-header">
+            <h1><i class="fa-solid fa-user-circle"></i> Patient Profile</h1>
+            <p id="pageDescription">View comprehensive patient details, appointment history, and prescriptions.</p>
+        </header>
+
+        <section class="patient-selection-section">
+            <div class="search-container">
+                <input type="text" id="patientSearchInput" placeholder="Search Patient by Name or ID..." title="Search for a patient">
+                <select id="patientSelectDropdown">
+                    <option value="">-- Select a Patient --</option>
+                    <!-- Patients will be loaded dynamically here -->
+                </select>
+                <button id="clearSelectionBtn" class="action-btn">Clear</button>
+            </div>
+            <p id="patientSelectionMessage" class="message"></p>
+        </section>
+
+        <section id="patientDetailsSection" class="patient-data-section" style="display: none;">
+            <h2>Personal Details</h2>
+            <div class="details-grid">
+                <div><strong>Patient ID:</strong> <span id="patientIdDisplay"></span></div>
+                <div><strong>Name:</strong> <span id="patientNameDisplay"></span></div>
+                <div><strong>Date of Birth:</strong> <span id="patientDobDisplay"></span></div>
+                <div><strong>Gender:</strong> <span id="patientGenderDisplay"></span></div>
+                <div><strong>Contact No.:</strong> <span id="patientContactDisplay"></span></div>
+                <div><strong>Email:</strong> <span id="patientEmailDisplay"></span></div>
+                <div><strong>Address:</strong> <span id="patientAddressDisplay"></span></div>
+                <div><strong>Registered On:</strong> <span id="patientRegisteredOnDisplay"></span></div>
+            </div>
+        </section>
+
+        <section id="appointmentHistorySection" class="patient-data-section" style="display: none;">
+            <h2>Appointment History</h2>
+            <div class="table-container">
+                <table id="appointmentsTable">
+                    <thead>
+                        <tr>
+                            <th>Doctor</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Reason</th>
+                            <th>Status</th>
+                            <th>Booked On</th>
+                        </tr>
+                    </thead>
+                    <tbody id="patientAppointmentsTableBody">
+                        <!-- Patient appointments will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+            <p id="appointmentsHistoryMessage" class="message"></p>
+        </section>
+
+        <section id="prescriptionHistorySection" class="patient-data-section" style="display: none;">
+            <h2>Prescription History</h2>
+            <div class="table-container">
+                <table id="prescriptionsTable">
+                    <thead>
+                        <tr>
+                            <th>Doctor</th>
+                            <th>Date Issued</th>
+                            <th>Medications</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody id="patientPrescriptionsTableBody">
+                        <!-- Patient prescriptions will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+            <p id="prescriptionsHistoryMessage" class="message"></p>
+        </section>
+
+    </div> <!-- End of mainContent -->
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Clinic Management System | All Rights Reserved</p>
+    </footer>
+
+    <!-- JavaScript files -->
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/guard.js"></script>
+    <script type="module" src="js/navbar.js"></script> <!-- NEW: Add this line -->
+    <script type="module" src="js/patient_profile.js"></script> 
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Clinic Management System</title>
+    <link rel="stylesheet" href="css/signup2.css">
+</head>
+<body>
+
+   <!-- Navbar -->
+   <nav>
+        <div class="logo">Clinic Management System</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)">Login ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="admin.html">Admin Login</a></li>
+                    <li><a href="doctor.html">Doctor Login</a></li>
+                    <li><a href="receptionist.html">Receptionist Login</a></li>
+                </ul>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Signup Section -->
+    <section class="signup-section">
+        <div class="signup-box">
+            <h2>Create Your Account</h2>
+            <p class="subtitle">Join us for efficient healthcare management</p>
+            <form id="signupForm">
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                
+                <select id="role" required>
+                    <option value="">-- Select Your Role --</option>
+                    <option value="doctor">Doctor</option>
+                    <option value="admin">Admin</option>
+                    <option value="receptionist">Receptionist</option>
+                    <option value="patient">Patient</option>
+                </select>
+
+                <button type="submit">Sign Up</button>
+            </form>
+            <p id="message"></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Clinic Management System | All Rights Reserved</p>
+    </footer>
+
+    <!-- Firebase SDKs from CDN -->
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/navbar.js"></script> <!-- NEW: Add this line -->
+    <script type="module" src="js/signup3.js"></script>
+</body>
+</html>

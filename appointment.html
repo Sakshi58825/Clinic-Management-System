@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - Clinic Management System</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Common styling -->
+    <link rel="stylesheet" href="css/appointment2.css"> <!-- Specific styling for this page -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Clinic Management System
+            <span id="authStatusMessage" style="margin-left: 15px; color: #ffeb3b; font-size: 0.9em; font-weight: normal;"></span>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li id="signupNavLinkContainer" style="display: none;"><a href="signup.html">Sign Up</a></li>
+            <li class="dropdown" id="loginDropdownContainer" style="display: none;">
+                <a href="javascript:void(0)">Login ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="login.html">Main Login</a></li>
+                    <li><a href="admin.html">Admin Login</a></li>
+                    <li><a href="doctor.html">Doctor Login</a></li>
+                    <li><a href="receptionist.html">Receptionist Login</a></li>
+                </ul>
+            </li>
+            <li><a href="patient_registration.html">Register Patient</a></li>
+            <li><a href="patient_queue.html">Patient Queue</a></li>
+            <li><a href="add_prescription.html">Add Prescription</a></li>
+            <li><a href="appointment.html" class="active">Appointments</a></li> <!-- This page itself -->
+            <li><a href="prescription.html">Prescriptions</a></li>
+            <li id="profileNavLinkContainer" style="display: none;"><a href="profile.html">Profile</a></li>
+            <li id="logoutNavLinkContainer" style="display: none;"><a href="#">Logout</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content wrapper, initially hidden. JavaScript will make it visible if logged in. -->
+    <div id="mainContent" style="display: none;">
+        <!-- Appointment Info Section -->
+        <section class="appointment-info" id="infoSection">
+            <h1>Easy Appointment Booking</h1>
+            <p>
+                Our online appointment booking system allows you to schedule your visit 
+                without any hassle. Choose your preferred doctor, time slot, and get confirmation instantly.
+            </p>
+            <ul>
+                <li>✔ Book appointments anytime, anywhere</li>
+                <li>✔ Get instant confirmation</li>
+                <li>✔ Manage and reschedule easily</li>
+            </ul>
+            <a class="book-btn" id="bookNowBtn" href="javascript:void(0)">Book Now</a>
+        </section>
+
+        <!-- Actual Booking Form Section (Initially Hidden) -->
+        <section class="booking-form-section" id="bookingFormSection" style="display: none;">
+            <header class="page-header">
+                <h1><i class="fa-solid fa-calendar-check"></i> Book Your Appointment Now</h1>
+                <p>Please fill out the form below to confirm your appointment.</p>
+            </header>
+            <form id="appointmentForm"> <!-- NAYA: ID changed to appointmentForm -->
+                <!-- NAYA: patientNameInput के लिए input field जोड़ा गया, patientSelect के साथ काम करने के लिए JS में और बदलाव करने होंगे -->
+                <div class="form-group" id="patientNameInputGroup"> 
+                    <label for="patientName">Patient Name:</label>
+                    <input type="text" id="patientName" required> <!-- NAYA: Added patientName input -->
+                    <p class="form-note">If existing patient, type name to auto-fill or manually add details.</p>
+                </div>
+                
+                <!-- NAYA: patientSelect और patientDisplayContainer को अगर आप इस्तेमाल करना चाहती हैं तो appointment.js में बदलाव करने होंगे -->
+                <!-- फिलहाल, इन्हें कमेंट किया गया है या patientName इनपुट पर फोकस करें -->
+                <!-- <div class="form-group">
+                    <label for="patientSelect">Select Patient:</label>
+                    <select id="patientSelect">
+                        <option value="">-- Select Existing Patient --</option>
+                    </select>
+                    <p class="form-note">If patient is new, please <a href="patient_registration.html">register them first</a>.</p>
+                </div>
+                <div class="form-group" id="patientDisplayContainer" style="display:none;">
+                    <label>Patient Name:</label>
+                    <span id="patientNameDisplay"></span>
+                </div> -->
+
+                <div class="form-group">
+                    <label for="doctorSelect">Select Doctor:</label>
+                    <select id="doctorSelect" required>
+                        <option value="">-- Select Doctor --</option>
+                        <!-- Doctors will be loaded here dynamically -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="appointmentDate">Appointment Date:</label>
+                    <input type="date" id="appointmentDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="appointmentTime">Appointment Time:</label>
+                    <input type="time" id="appointmentTime" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="reason">Reason for Appointment:</label> <!-- NAYA: ID changed to reason -->
+                    <textarea id="reason" rows="3" placeholder="e.g., Routine check-up, Fever, Consultation for..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Book Appointment</button>
+                <p id="appointmentMessage" class="message"></p>
+            </form>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Clinic Management System | All Rights Reserved</p>
+    </footer>
+
+    <!-- JavaScript files -->
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/guard.js"></script>
+    <script type="module" src="js/navbar.js"></script>
+    <script type="module" src="js/appointment.js"></script>
+</body>
+</html>

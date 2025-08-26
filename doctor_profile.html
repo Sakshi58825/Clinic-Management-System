@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor & Patient Profiles - Clinic Management System</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Common styling -->
+    <link rel="stylesheet" href="css/doctor_profile.css"> <!-- Specific styling for this page -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Clinic Management System
+            <span id="authStatusMessage" style="margin-left: 15px; color: #ffeb3b; font-size: 0.9em; font-weight: normal;"></span>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li id="signupNavLinkContainer" style="display: none;"><a href="signup.html">Sign Up</a></li>
+            <li class="dropdown" id="loginDropdownContainer" style="display: none;">
+                <a href="javascript:void(0)">Login ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="login.html">Main Login</a></li>
+                    <li><a href="admin.html">Admin Login</a></li>
+                    <li><a href="doctor.html">Doctor Login</a></li>
+                    <li><a href="receptionist.html">Receptionist Login</a></li>
+                </ul>
+            </li>
+            <li><a href="patient_registration.html">Register Patient</a></li>
+            <li><a href="patient_queue.html">Patient Queue</a></li>
+            <li><a href="add_prescription.html">Add Prescription</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)">Appointments ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="appointment.html">Book Appointment</a></li>
+                    <li><a href="view_appointment.html">View Appointments</a></li>
+                </ul>
+            </li>
+            <li><a href="prescription.html">Prescriptions</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="active">Patient Data ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="patient_profile.html">Patient Profile</a></li>
+                </ul>
+            </li>
+            <!-- New Management Dropdown for easy access -->
+            <li class="dropdown active-page-link">
+                <a href="javascript:void(0)" class="active">Management ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="doctor_profile.html" class="active">Manage Doctors & Patients</a></li>
+                    <!-- We will put patient_management.html link here later if needed as separate file -->
+                </ul>
+            </li>
+            <li id="profileNavLinkContainer"><a href="profile.html">Profile</a></li>
+            <li id="logoutNavLinkContainer"><a href="#">Logout</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content wrapper -->
+    <div id="mainContent" style="display: none;">
+        <header class="page-header">
+            <h1><i class="fa-solid fa-users-medical"></i> Doctor & Patient Profile Management</h1>
+            <p id="pageDescription">View and manage profiles of clinic doctors and registered patients.</p>
+        </header>
+
+        <section class="tab-selection-section">
+            <div class="tabs">
+                <button class="tab-button active" data-tab="doctors">Doctors</button>
+                <button class="tab-button" data-tab="patients">Patients</button>
+            </div>
+        </section>
+
+        <!-- Doctors Management Section -->
+        <section id="doctorsTab" class="content-section active">
+            <h2><i class="fa-solid fa-user-md"></i> Clinic Doctors</h2>
+            <div class="search-add-controls">
+                <input type="text" id="doctorSearchInput" placeholder="Search Doctor by Name or Email..." title="Search for a doctor">
+                <!-- Add Doctor Button (Future Feature) -->
+                <!-- <button id="addDoctorBtn" class="action-btn-primary"><i class="fa-solid fa-plus"></i> Add New Doctor</button> -->
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Contact</th>
+                            <th>Specialization</th>
+                            <th>Registered On</th>
+                            <!-- <th>Actions (Future Feature)</th> -->
+                        </tr>
+                    </thead>
+                    <tbody id="doctorsTableBody">
+                        <!-- Doctors will be loaded here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <p id="doctorsMessage" class="message"></p>
+        </section>
+
+        <!-- Patients Management Section -->
+        <section id="patientsTab" class="content-section">
+            <h2><i class="fa-solid fa-hospital-user"></i> Registered Patients</h2>
+            <div class="search-add-controls">
+                <input type="text" id="patientSearchInput" placeholder="Search Patient by Name or ID..." title="Search for a patient">
+                <!-- Add Patient Button (Future Feature) -->
+                <!-- <button id="addPatientBtn" class="action-btn-primary"><i class="fa-solid fa-user-plus"></i> Add New Patient</button> -->
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Patient ID</th>
+                            <th>Name</th>
+                            <th>Contact</th>
+                            <th>Email</th>
+                            <th>Gender</th>
+                            <th>DOB</th>
+                            <th>Registered On</th>
+                            <!-- <th>Actions (Future Feature)</th> -->
+                        </tr>
+                    </thead>
+                    <tbody id="patientsTableBody">
+                        <!-- Patients will be loaded here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <p id="patientsMessage" class="message"></p>
+        </section>
+
+    </div> <!-- End of mainContent -->
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Clinic Management System | All Rights Reserved</p>
+    </footer>
+
+    <!-- JavaScript files -->
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/guard.js"></script>
+    <script type="module" src="js/navbar.js"></script> <!-- NEW: Add this line -->
+    <script type="module" src="js/doctor_profile.js"></script> 
+</body>
+</html>

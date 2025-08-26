@@ -1,0 +1,236 @@
+/* Reset - Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* HTML and Body Base Styles (Crucial for vertical centering and footer) */
+html, body {
+    height: 100%; /* Ensures HTML and Body take full viewport height */
+    margin: 0; /* Removes default browser margins */
+    padding: 0; /* Removes default browser padding */
+}
+
+/* Body Background and Layout */
+body.login-page { /* Use .login-page class as per your HTML */
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #0f172a, #1e3a8a);
+    color: white;
+    display: flex; /* Makes body a flex container */
+    flex-direction: column; /* Stacks children (nav, header, main content, footer) vertically */
+    min-height: 100vh; /* Ensures body takes at least full viewport height to push footer down */
+}
+
+/* Navbar - Consistent Styling */
+nav {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 12px 20px; /* Slightly adjusted padding for consistency */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* Keep it sticky */
+    top: 0;
+    z-index: 100;
+}
+
+nav .logo {
+    font-weight: bold;
+    font-size: 1.3rem; /* Slightly larger for consistency */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    display: block;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #38bdf8;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    transform: scale(1.05);
+}
+
+/* Dropdown Menu - Consistent Styling */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    min-width: 160px;
+    width: auto;
+    height: auto;
+    z-index: 1000;
+}
+
+.dropdown-menu li {
+    padding: 8px 20px;
+    white-space: nowrap;
+}
+
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu li a:hover {
+    background-color: rgba(56, 189, 248, 0.2);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Page Header (e.g., Welcome Back!) */
+.login-header {
+    text-align: center;
+    margin-top: 20px; /* Space from navbar */
+    margin-bottom: 20px; /* Space to login form */
+    animation: fadeInDown 0.8s ease-out; /* Animation */
+}
+
+.login-header h1 {
+    font-size: 2rem;
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+.login-header p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.8);
+}
+
+/* Login Center Container (The main area that takes remaining space and centers the box) */
+.login-center {
+    flex: 1; /* Allows this section to grow and fill available vertical space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px; /* Adjusted padding here to avoid pushing content too much */
+}
+
+/* Login Box (The actual form container) */
+.login-box {
+    background: rgba(255, 255, 255, 0.07);
+    padding: 25px; /* Reduced padding from 35px to 25px */
+    border-radius: 12px;
+    width: 100%;
+    max-width: 380px; /* Adjusted max-width for better look */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(6px);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 15px; /* Reduced margin */
+    color: #38bdf8;
+    font-size: 1.8rem;
+}
+
+.login-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Reduced gap from 12px to 10px */
+}
+
+.login-box label {
+    display: block;
+    font-weight: bold;
+    text-align: left;
+}
+
+.login-box input,
+.login-box select {
+    width: 100%;
+    padding: 10px; /* Reduced padding for inputs */
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+}
+
+.login-box input::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+.login-box button {
+    width: 100%;
+    padding: 12px; /* Reduced padding for button */
+    background-color: #38bdf8;
+    color: #0f172a;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 8px; /* Reduced margin */
+}
+
+.login-box button:hover {
+    background-color: #0284c7;
+}
+
+.signup-link {
+    margin-top: 15px; /* Reduced margin */
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.8);
+}
+
+.signup-link a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    color: #e2e8f0;
+    margin-top: auto; /* This pushes the footer to the bottom */
+}
+
+/* Keyframe Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

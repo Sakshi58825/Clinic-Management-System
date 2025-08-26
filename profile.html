@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - Clinic Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+    <!-- Navbar (Same as index.html, with IDs) -->
+    <nav>
+        <div class="logo">Clinic Management System
+            <span id="authStatusMessage" style="margin-left: 15px; color: #81c784; font-size: 0.9em; font-weight: normal;"></span>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li id="signupNavLinkContainer" style="display: none;"><a href="signup.html">Sign Up</a></li>
+            <li class="dropdown" id="loginDropdownContainer" style="display: none;">
+                <a href="javascript:void(0)">Login ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="admin.html">Admin Login</a></li>
+                    <li><a href="doctor.html">Doctor Login</a></li>
+                    <li><a href="receptionist.html">Receptionist Login</a></li>
+                </ul>
+            </li>
+            <li id="profileNavLinkContainer"><a href="profile.html">Profile</a></li>
+            <li id="logoutNavLinkContainer"><a href="#">Logout</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div style="flex: 1; padding: 40px 20px;">
+        <header style="text-align: center; margin-bottom: 30px;">
+            <h1>Your Profile</h1>
+            <p>Manage your account details and settings.</p>
+        </header>
+
+        <section class="profile-details" style="background-color: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 10px; max-width: 600px; margin: 0 auto; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);">
+            <p style="margin-bottom: 10px;"><strong>Email:</strong> <span id="profileEmail">Loading...</span></p>
+            <p style="margin-bottom: 10px;"><strong>Name:</strong> <span id="profileName">Loading...</span></p>
+            <p style="margin-bottom: 20px;"><strong>Member Since:</strong> <span id="profileCreationDate">Loading...</span></p>
+            <button id="logoutButton" style="background-color: #dc3545; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer;">Logout</button>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2025 Clinic Management System | All Rights Reserved</p>
+    </footer>
+
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/guard.js"></script>
+    <script type="module" src="js/navbar.js"></script> <!-- NEW: Add this line -->
+    <script type="module" src="js/profile.js"></script>
+</body>
+</html>

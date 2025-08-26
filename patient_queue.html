@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Queue - Clinic Management System</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Common styling for navbar, body etc. -->
+    <link rel="stylesheet" href="css/patient_queue.css"> <!-- Specific styling for this page -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Clinic Management System
+            <span id="authStatusMessage" style="margin-left: 15px; color: #ffeb3b; font-size: 0.9em; font-weight: normal;"></span>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li id="signupNavLinkContainer" style="display: none;"><a href="signup.html">Sign Up</a></li>
+            <li class="dropdown" id="loginDropdownContainer" style="display: none;">
+                <a href="javascript:void(0)">Login ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="login.html">Main Login</a></li>
+                    <li><a href="admin.html">Admin Login</a></li>
+                    <li><a href="doctor.html">Doctor Login</a></li>
+                    <li><a href="receptionist.html">Receptionist Login</a></li>
+                </ul>
+            </li>
+            <li><a href="patient_registration.html">Register Patient</a></li>
+            <li><a href="patient_queue.html" class="active">Patient Queue</a></li>
+            <li><a href="appointment.html">Appointments</a></li>
+            <li><a href="prescription.html">Prescriptions</a></li>
+            <li id="profileNavLinkContainer" style="display: none;"><a href="profile.html">Profile</a></li>
+            <li id="logoutNavLinkContainer" style="display: none;"><a href="#">Logout</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- NAYA CODE: Main content wrapper, initially hidden. JavaScript will make it visible if logged in. -->
+    <div id="mainContent" style="display: none;">
+        <!-- Page Header -->
+        <header>
+            <h1><i class="fa-solid fa-list-ol"></i> Patient Queue & Status</h1>
+            <p>Manage patients in the queue and update their consultation status.</p>
+        </header>
+
+        <!-- Search / Filter Section -->
+        <section class="search-section">
+    <input type="date" id="filterDateQueue" title="Filter by Date"> <!-- NAYA: डेट फिल्टर इनपुट -->
+    <input type="text" id="searchPatientInput" placeholder="Search by Patient Name, Doctor, or Reason">
+    <select id="filterStatusSelect">
+        <option value="all">All Statuses</option>
+        <option value="waiting">Waiting</option>
+        <option value="in-consultation">In Consultation</option>
+        <option value="completed">Completed</option>
+        <option value="cancelled">Cancelled</option>
+    </select>
+    <button id="applyFilterBtn">Apply Filter</button>
+</section>
+
+
+        <!-- Patient Table -->
+        <section class="patient-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time</th> <!-- Appointment Time -->
+                        <th>Patient Name</th>
+                        <th>Doctor Name</th>
+                        <th>Date</th> 
+                        <th>Reason</th>
+                        <th>Queue Status</th> <!-- This will be 'Waiting', 'In Consultation' -->
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="patientTableBody">
+                    <!-- Patient data will be loaded here by JavaScript -->
+                    <tr><td colspan="7" style="text-align: center;">Loading patients...</td></tr>
+                </tbody>
+            </table>
+            <p id="noPatientsMessage" style="text-align: center; margin-top: 20px; display: none;">No patients found matching your criteria.</p>
+        </section>
+    </div> <!-- End of mainContent -->
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Clinic Management System | All Rights Reserved</p>
+    </footer>
+
+    <!-- JavaScript files -->
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/guard.js"></script>
+    <script type="module" src="js/patient_queue.js"></script>
+    <script type="module" src="js/navbar.js"></script> <!-- NEW: Add this line -->
+    <script type="modlue" src="js/add_prescription.js"></script> <!-- NAYI JS File -->
+</body>
+</html>

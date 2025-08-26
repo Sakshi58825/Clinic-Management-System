@@ -1,0 +1,22 @@
+# Node modules (large, re-installable dependency folder)
+node_modules/
+
+# Log files
+*.log
+firebase-debug.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment variables (if you had any)
+.env
+.env.*
+
+# Editor/IDE specific configuration files
+.vscode/
+.idea/
+
+# Build outputs (if your project had a build process, not common for simple HTML/JS)
+dist/
+build/

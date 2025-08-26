@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescriptions - Clinic Management System</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Common styling (assuming this is correct) -->
+    <link rel="stylesheet" href="css/prescription2.css"> <!-- Specific styling for this page -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Clinic Management System
+            <span id="authStatusMessage" style="margin-left: 15px; color: #ffeb3b; font-size: 0.9em; font-weight: normal;"></span>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li id="signupNavLinkContainer" style="display: none;"><a href="signup.html">Sign Up</a></li>
+            <li class="dropdown" id="loginDropdownContainer" style="display: none;">
+                <a href="javascript:void(0)">Login ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="login.html">Main Login</a></li>
+                    <li><a href="admin.html">Admin Login</a></li>
+                    <li><a href="doctor.html">Doctor Login</a></li>
+                    <li><a href="receptionist.html">Receptionist Login</a></li>
+                </ul>
+            </li>
+            <li><a href="patient_registration.html">Register Patient</a></li>
+            <li><a href="patient_queue.html">Patient Queue</a></li>
+            <li><a href="add_prescription.html">Add Prescription</a></li>
+            <li><a href="appointment.html">Appointments</a></li>
+            <li><a href="prescription.html" class="active">Prescriptions</a></li> <!-- This page itself -->
+            <li><a href="profile.html">Profile</a></li>
+            <li id="logoutNavLinkContainer" style="display: none;"><a href="#">Logout</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content wrapper -->
+    <div id="mainContent" style="display: none;">
+        <header class="page-header">
+            <h1><i class="fa-solid fa-file-prescription"></i> Digital Prescription Records</h1>
+            <p>View, add, and manage prescriptions for patients easily.</p>
+        </header>
+
+        <section class="prescription-list-section">
+            <div class="filter-controls">
+                <input type="text" id="searchPrescriptionInput" placeholder="Search by Patient Name...">
+                <button id="applyPrescriptionFilterBtn">Search</button>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Prescription ID</th>
+                            <th>Patient ID</th>
+                            <th>Doctor Name</th>
+                            <th>Date</th>
+                            <th>Medicines</th>
+                            <th>Notes</th>
+                            <th>Timestamp</th>
+                        </tr>
+                    </thead>
+                    <tbody id="prescriptionTableBody">
+                        <!-- Prescriptions will be loaded here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <p id="prescriptionMessage" class="message"></p>
+        </section>
+    </div> <!-- End of mainContent -->
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Clinic Management System | All Rights Reserved</p>
+    </footer>
+
+    <!-- JavaScript files -->
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/guard.js"></script>
+    <script type="module" src="js/navbar.js"></script> <!-- NEW: Add this line -->
+    <script type="module" src="js/prescription.js"></script>
+</body>
+</html>

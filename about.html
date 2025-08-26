@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Clinic Management System</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Common styling -->
+    <link rel="stylesheet" href="css/about2.css"> <!-- Specific styling for this page -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar (Will be updated dynamically by guard.js/firebase.js) -->
+    <nav>
+        <div class="logo">Clinic Management System
+            <span id="authStatusMessage" style="margin-left: 15px; color: #ffeb3b; font-size: 0.9em; font-weight: normal;"></span>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li id="signupNavLinkContainer" style="display: none;"><a href="signup.html">Sign Up</a></li>
+            <li class="dropdown" id="loginDropdownContainer" style="display: none;">
+                <a href="javascript:void(0)">Login ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="login.html">Main Login</a></li>
+                    <li><a href="admin.html">Admin Login</a></li>
+                    <li><a href="doctor.html">Doctor Login</a></li>
+                    <li><a href="receptionist.html">Receptionist Login</a></li>
+                </ul>
+            </li>
+            <li><a href="patient_registration.html">Register Patient</a></li>
+            <li><a href="patient_queue.html">Patient Queue</a></li>
+            <li><a href="add_prescription.html">Add Prescription</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)">Appointments ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="appointment.html">Book Appointment</a></li>
+                    <li><a href="view_appointment.html">View Appointments</a></li>
+                </ul>
+            </li>
+            <li><a href="prescription.html">Prescriptions</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)">Patient Data ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="patient_history.html">Patient History</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)">Management ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="doctor_profile.html">Manage Doctors & Patients</a></li>
+                </ul>
+            </li>
+            <li id="profileNavLinkContainer"><a href="profile.html">Profile</a></li>
+            <li id="logoutNavLinkContainer"><a href="#">Logout</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content wrapper -->
+    <div id="mainContent">
+        <header class="page-header">
+            <h1><i class="fa-solid fa-circle-info"></i> About Our Clinic</h1>
+            <p>Learn more about our mission, vision, and the values that drive us.</p>
+        </header>
+
+        <section class="about-section">
+            <div class="content-block">
+                <h2>Our Mission</h2>
+                <p>At Clinic Management System, our mission is to provide compassionate, comprehensive, and high-quality healthcare services to our community. We are dedicated to promoting wellness, preventing illness, and restoring health with integrity and respect for every patient.</p>
+            </div>
+
+            <div class="content-block">
+                <h2>Our Vision</h2>
+                <p>To be the leading healthcare provider in the region, recognized for our commitment to patient-centered care, innovative medical practices, and a healing environment where patients feel valued and cared for.</p>
+            </div>
+
+            <div class="content-block">
+                <h2>Our Values</h2>
+                <ul>
+                    <li><strong>Compassion:</strong> Treating every patient with empathy and understanding.</li>
+                    <li><strong>Excellence:</strong> Striving for the highest standards in medical care and service.</li>
+                    <li><strong>Integrity:</strong> Upholding honesty and ethical principles in all our actions.</li>
+                    <li><strong>Collaboration:</strong> Working together as a team to achieve the best patient outcomes.</li>
+                    <li><strong>Innovation:</strong> Embracing new technologies and methods to enhance healthcare delivery.</li>
+                </ul>
+            </div>
+
+            <div class="content-block">
+                <h2>Our Team</h2>
+                <p>Our clinic is staffed by a team of highly qualified and experienced medical professionals, including doctors, nurses, and administrative staff, all dedicated to providing exceptional care.</p>
+                <p>We believe in continuous learning and professional development to ensure we are always at the forefront of medical advancements.</p>
+            </div>
+
+            <div class="content-block">
+                <h2>Our History</h2>
+                <p>Established in [Year, e.g., 2010], our clinic has grown from a small practice to a comprehensive healthcare facility, serving thousands of families. We are proud of our journey and grateful for the trust our patients place in us.</p>
+            </div>
+        </section>
+    </div> <!-- End of mainContent -->
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Clinic Management System | All Rights Reserved</p>
+    </footer>
+
+    <!-- JavaScript files -->
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/guard.js"></script>
+    <script type="module" src="js/navbar.js"></script> <!-- NEW: Add this line -->
+    <!-- No specific JS for about.html, but guard.js runs globally -->
+</body>
+</html>

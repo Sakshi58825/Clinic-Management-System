@@ -1,0 +1,228 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body & Background */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #0f172a, #1e3a8a);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.feature {
+    display: block;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+.feature:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #38bdf8;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* logo aur text ke beech ka gap */
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.logo-img {
+    width: 35px; /* logo ka size */
+    height: 35px;
+    object-fit: contain;
+}
+.feature a {
+    color: white;
+    text-decoration: none;
+}
+
+.feature a:hover {
+    text-decoration: underline;
+    color: #38bdf8;
+}
+
+/* Navbar */
+nav {
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 12px;
+    display: block;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Dropdown container position fix */
+.dropdown {
+    position: relative;
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+}
+
+/* Dropdown menu style */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* nav ke thik neeche */
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    min-width: 160px;
+    width: auto; /* jitna content ho utna width */
+    height: auto; /* lamba nahi hoga */
+    z-index: 1000;
+}
+
+/* Dropdown items */
+.dropdown-menu li {
+    padding: 8px 20px;
+    white-space: nowrap; /* line wrap nahi hoga */
+}
+
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu li a:hover {
+    background-color: rgba(56, 189, 248, 0.2);
+}
+
+/* Show menu on hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+/* Hover effect */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+
+/* Header */
+header {
+    text-align: center;
+    padding: 50px 20px;
+}
+header h1 {
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+header p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #cbd5e1;
+}
+
+/* Features Section */
+.features {
+    padding: 40px 20px;
+    text-align: center;
+    flex: 1;
+}
+.features h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+}
+.feature-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+.feature {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease; /* Ensure this is here for smooth transitions */
+    width: 100%;
+    max-width: 250px;
+    cursor: pointer;
+}
+.feature:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    color: #e2e8f0;
+}
+
+/* NAYA CODE: Logout link ke liye styling */
+#logoutNavLink a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 12px;
+    display: block;
+    background-color: #dc3545; /* Red background for logout */
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+#logoutNavLink a:hover {
+    background: #c82333;
+}
+
+/* NAYA CODE: Signup/Login links ko highlight karne ke liye transition */
+#signupNavLink a, #adminLoginLink a, #doctorLoginLink a, #receptionistLoginLink a {
+    transition: background-color 0.3s ease; /* Smooth transition for highlight */
+}

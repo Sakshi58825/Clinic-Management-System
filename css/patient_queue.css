@@ -1,0 +1,261 @@
+/* Reset - Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* HTML and Body Base Styles (Crucial for vertical centering and footer) */
+html, body {
+    height: 100%; /* Ensures HTML and Body take full viewport height */
+    margin: 0; /* Removes default browser margins */
+    padding: 0; /* Removes default browser padding */
+}
+
+/* Body Background and Layout */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #0f172a, #1e3a8a);
+    color: white;
+    display: flex; /* Makes body a flex container */
+    flex-direction: column; /* Stacks children (nav, header, main content, footer) vertically */
+    min-height: 100vh; /* Ensures body takes at least full viewport height to push footer down */
+}
+
+/* Navbar - Consistent Styling (similar to common styles) */
+nav {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav .logo {
+    font-weight: bold;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    display: block;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #38bdf8;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    transform: scale(1.05);
+}
+
+/* Dropdown Menu - Consistent Styling */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    min-width: 160px;
+    width: auto;
+    height: auto;
+    z-index: 1000;
+}
+
+.dropdown-menu li {
+    padding: 8px 20px;
+    white-space: nowrap;
+}
+
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu li a:hover {
+    background-color: rgba(56, 189, 248, 0.2);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Main Content Wrapper (id="mainContent") */
+#mainContent {
+    flex: 1; /* Allows this section to grow and fill available vertical space */
+    display: flex;
+    flex-direction: column; /* Stack header, search, table vertically */
+}
+
+/* Page Header */
+header {
+    text-align: center;
+    padding: 30px 20px 10px;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.8);
+}
+
+/* Search / Filter Section */
+.search-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px;
+}
+
+.search-section input[type="text"],
+.search-section select {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    width: 250px;
+}
+
+.search-section button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #38bdf8;
+    color: #0f172a;
+    transition: background-color 0.3s;
+}
+
+.search-section button:hover {
+    background-color: #0284c7;
+    color: white;
+}
+
+/* Patient Table */
+.patient-table {
+    flex: 1; /* Allows the table section to grow and push footer down */
+    max-width: 95%;
+    margin: 0 auto 50px;
+    overflow-x: auto; /* For responsiveness on small screens */
+    background: rgba(255,255,255,0.08); /* Background for the table container */
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.patient-table table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px; /* Minimum width to prevent squishing */
+}
+
+.patient-table th,
+.patient-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.patient-table th {
+    background-color: rgba(56, 189, 248, 0.2);
+    color: #38bdf8;
+}
+
+.patient-table tr:hover {
+    background-color: rgba(56, 189, 248, 0.1);
+}
+
+/* Status Specific Styling */
+.status-waiting { color: #facc15; font-weight: bold; } /* Yellow */
+.status-in-consultation { color: #81c784; font-weight: bold; } /* Green */
+.status-completed { color: #9da3af; font-weight: bold; } /* Grey */
+
+/* Action Buttons */
+.action-btn {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 5px;
+    transition: background-color 0.3s;
+}
+
+.start-btn { background-color: #4CAF50; color: white; } /* Green */
+.start-btn:hover { background-color: #43a047; }
+
+.complete-btn { background-color: #2196F3; color: white; } /* Blue */
+.complete-btn:hover { background-color: #1976D2; }
+
+.view-btn { background-color: #607d8b; color: white; } /* Grey */
+.view-btn:hover { background-color: #455a64; }
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    color: #e2e8f0;
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+
+/* Keyframe Animations (reused from login2.css if needed, or add here) */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .search-section {
+        flex-direction: column;
+    }
+    .search-section input[type="text"],
+    .search-section select,
+    .search-section button {
+        width: 100%;
+    }
+    .patient-table {
+        padding: 10px;
+    }
+    .patient-table th, .patient-table td {
+        padding: 8px 10px;
+    }
+}

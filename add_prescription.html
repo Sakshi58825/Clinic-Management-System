@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Prescription - Clinic Management System</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Common styling -->
+    <link rel="stylesheet" href="css/add_prescription.css"> <!-- THIS IS THE NEW/UPDATED CSS FILE FOR THIS PAGE -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Clinic Management System
+            <span id="authStatusMessage" style="margin-left: 15px; color: #ffeb3b; font-size: 0.9em; font-weight: normal;"></span>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li id="signupNavLinkContainer" style="display: none;"><a href="signup.html">Sign Up</a></li>
+            <li class="dropdown" id="loginDropdownContainer" style="display: none;">
+                <a href="javascript:void(0)">Login ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="login.html">Main Login</a></li>
+                    <li><a href="admin.html">Admin Login</a></li>
+                    <li><a href="doctor.html">Doctor Login</a></li>
+                    <li><a href="receptionist.html">Receptionist Login</a></li>
+                </ul>
+            </li>
+            <li><a href="patient_registration.html">Register Patient</a></li>
+            <li><a href="patient_queue.html">Patient Queue</a></li>
+            <li><a href="add_prescription.html" class="active">Add Prescription</a></li> <!-- This page itself -->
+            <li><a href="appointment.html">Appointments</a></li>
+            <li><a href="prescription.html">Prescriptions</a></li>
+            <li id="profileNavLinkContainer" style="display: none;"><a href="profile.html">Profile</a></li>
+            <li id="logoutNavLinkContainer" style="display: none;"><a href="#">Logout</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content wrapper -->
+    <div id="mainContent" style="display: none;">
+        <header class="page-header">
+            <h1><i class="fa-solid fa-file-medical"></i> Add New Prescription</h1>
+            <p>Fill in the details to add a new prescription for the patient.</p>
+        </header>
+
+        <section class="prescription-form-section">
+            <div class="form-container">
+                <form id="addPrescriptionForm">
+                    <h2>Patient Details</h2>
+                    <div class="form-group">
+                        <label for="patientNameDisplay">Patient Name:</label>
+                        <span id="patientNameDisplay"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="patientIdDisplay">Patient ID:</label>
+                        <input type="text" id="patientIdDisplay" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="patientAgeDisplay">Age:</label>
+                        <input type="text" id="patientAgeDisplay" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="patientGenderDisplay">Gender:</label>
+                        <input type="text" id="patientGenderDisplay" readonly>
+                    </div>
+
+                    <h2>Doctor & Date</h2>
+                    <div class="form-group">
+                        <label for="doctorName">Doctor Name:</label>
+                        <input type="text" id="doctorName" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="prescriptionDate">Date:</label>
+                        <input type="date" id="prescriptionDate" readonly>
+                    </div>
+
+                    <h2>Prescription Details</h2>
+                    <div class="form-group full-width">
+                        <label for="medicines">Medicines & Dosage:</label>
+                        <textarea id="medicines" rows="10" placeholder="List medicines with dosage and frequency"></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="notes">Additional Notes/Instructions:</label>
+                        <textarea id="notes" rows="5" placeholder="Any additional notes or instructions"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Add Prescription</button>
+                    <p id="prescriptionMessage"></p>
+                </form>
+            </div>
+        </section>
+    </div> <!-- End of mainContent -->
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Clinic Management System | All Rights Reserved</p>
+    </footer>
+
+    <!-- JavaScript files -->
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/guard.js"></script>
+    <script type="module" src="js/navbar.js"></script> <!-- NEW: Add this line -->
+    <script type="module" src="js/add_prescription.js"></script>
+</body>
+</html>

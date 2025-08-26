@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Details - Clinic Management System</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Common styling -->
+    <link rel="stylesheet" href="css/patient_details.css"> <!-- THIS IS THE NEW CSS FILE FOR THIS PAGE -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Clinic Management System
+            <span id="authStatusMessage" style="margin-left: 15px; color: #ffeb3b; font-size: 0.9em; font-weight: normal;"></span>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li id="signupNavLinkContainer" style="display: none;"><a href="signup.html">Sign Up</a></li>
+            <li class="dropdown" id="loginDropdownContainer" style="display: none;">
+                <a href="javascript:void(0)">Login ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="login.html">Main Login</a></li>
+                    <li><a href="admin.html">Admin Login</a></li>
+                    <li><a href="doctor.html">Doctor Login</a></li>
+                    <li><a href="receptionist.html">Receptionist Login</a></li>
+                </ul>
+            </li>
+            <li><a href="patient_registration.html">Register Patient</a></li>
+            <li><a href="patient_queue.html">Patient Queue</a></li>
+            <li><a href="add_prescription.html">Add Prescription</a></li>
+            <li><a href="appointment.html">Appointments</a></li>
+            <li><a href="prescription.html">Prescriptions</a></li>
+            <li id="profileNavLinkContainer" style="display: none;"><a href="profile.html">Profile</a></li>
+            <li id="logoutNavLinkContainer" style="display: none;"><a href="#">Logout</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content wrapper -->
+    <div id="mainContent" style="display: none;">
+        <header class="page-header">
+            <h1><i class="fa-solid fa-user-injured"></i> Patient Details</h1>
+            <p>Comprehensive view of patient information.</p>
+        </header>
+
+        <section class="patient-details-section">
+            <div class="details-container">
+                <div class="detail-group">
+                    <label>Patient ID:</label>
+                    <span id="detailPatientId"></span>
+                </div>
+                <div class="detail-group">
+                    <label>Token:</label>
+                    <span id="detailToken"></span>
+                </div>
+                <div class="detail-group">
+                    <label>Name:</label>
+                    <span id="detailName"></span>
+                </div>
+                <div class="detail-group">
+                    <label>Age:</label>
+                    <span id="detailAge"></span>
+                </div>
+                <div class="detail-group">
+                    <label>Gender:</label>
+                    <span id="detailGender"></span>
+                </div>
+                <div class="detail-group">
+                    <label>Contact:</label>
+                    <span id="detailContact"></span>
+                </div>
+                <div class="detail-group">
+                    <label>Address:</label>
+                    <span id="detailAddress"></span>
+                </div>
+                <div class="detail-group">
+                    <label>Status:</label>
+                    <span id="detailStatus"></span>
+                </div>
+                <div class="detail-group">
+                    <label>Registered On:</label>
+                    <span id="detailRegisteredOn"></span>
+                </div>
+            </div>
+            <p id="detailsMessage" class="message"></p>
+            <button class="view-prescriptions-btn">View Patient's Prescriptions</button> <!-- Added this button -->
+            <button class="back-btn" onclick="window.location.href='patient_queue.html'">Back to Patient Queue</button>
+        </section>
+    </div> <!-- End of mainContent -->
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Clinic Management System | All Rights Reserved</p>
+    </footer>
+
+    <!-- JavaScript files -->
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/guard.js"></script>
+  <script type="module" src="js/navbar.js"></script> <!-- NEW: Add this line -->
+    <script type="module" src="js/patient_details.js"></script> <!-- THIS IS THE NEW JS FILE FOR THIS PAGE -->
+</body>
+</html>

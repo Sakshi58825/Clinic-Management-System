@@ -1,0 +1,182 @@
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Background */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #0f172a, #1e3a8a);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+/* Dropdown container */
+.dropdown {
+    position: relative;
+}
+
+/* Dropdown menu style */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* nav ke thik neeche */
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    min-width: 160px;
+    width: auto; /* jitna content ho utna width */
+    height: auto; /* lamba nahi hoga */
+    z-index: 1000;
+}
+
+/* Dropdown items */
+.dropdown-menu li {
+    padding: 8px 20px;
+    white-space: nowrap; /* line wrap nahi hoga */
+}
+
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu li a:hover {
+    background-color: rgba(56, 189, 248, 0.2);
+}
+
+/* Show menu on hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Hover effect */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+/* Hover pe dropdown show */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Navbar */
+nav {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #38bdf8; /* Light blue hover */
+}
+
+
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    color: #e2e8f0;
+}
+
+
+
+/* Signup Section */
+.signup-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.signup-box {
+    background: rgba(255, 255, 255, 0.07);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    max-width: 500px; /* width thoda badhaya */
+    width: 100%;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(6px); /* glass effect */
+}
+
+.signup-box h2 {
+    margin-bottom: 25px;
+    color: #38bdf8; /* Professional blue heading */
+    font-size: 1.8rem;
+}
+
+.signup-box input {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+}
+
+.signup-box input::placeholder {
+    color: #cbd5e1;
+}
+
+.signup-box button {
+    width: 100%;
+    padding: 14px;
+    background-color: #38bdf8;
+    color: #0f172a;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.signup-box button:hover {
+    background-color: #0284c7;
+}
+
+/* Form spacing improvement */
+.signup-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

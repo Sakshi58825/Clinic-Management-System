@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Appointment - Clinic Management System</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Common styling -->
+    <link rel="stylesheet" href="css/view_appointment.css"> <!-- Specific styling for this page -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Clinic Management System
+            <span id="authStatusMessage" style="margin-left: 15px; color: #ffeb3b; font-size: 0.9em; font-weight: normal;"></span>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li id="signupNavLinkContainer" style="display: none;"><a href="signup.html">Sign Up</a></li>
+            <li class="dropdown" id="loginDropdownContainer" style="display: none;">
+                <a href="javascript:void(0)">Login ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="login.html">Main Login</a></li>
+                    <li><a href="admin.html">Admin Login</a></li>
+                    <li><a href="doctor.html">Doctor Login</a></li>
+                    <li><a href="receptionist.html">Receptionist Login</a></li>
+                </ul>
+            </li>
+            <li><a href="patient_registration.html">Register Patient</a></li>
+            <li><a href="patient_queue.html">Patient Queue</a></li>
+            <li><a href="add_prescription.html">Add Prescription</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="active">Appointments ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="appointment.html">Book Appointment</a></li>
+                    <li><a href="view_appointment.html" class="active">View Appointments</a></li>
+                </ul>
+            </li>
+            <li><a href="prescription.html">Prescriptions</a></li>
+            <li id="profileNavLinkContainer" style="display: none;"><a href="profile.html">Profile</a></li>
+            <li id="logoutNavLinkContainer" style="display: none;"><a href="#">Logout</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content wrapper -->
+    <div id="mainContent" style="display: none;">
+        <header class="page-header">
+            <h1><i class="fa-solid fa-calendar-alt"></i> Scheduled Appointments</h1>
+            <p id="pageDescription">View and manage appointments.</p>
+        </header>
+
+        <section class="appointments-list-section">
+            <div class="filter-controls">
+                <input type="date" id="filterDate" title="Filter by Date" value="">
+                <select id="filterDoctor" title="Filter by Doctor">
+                    <option value="all">All Doctors</option>
+                    <!-- Doctors will be loaded dynamically -->
+                </select>
+                <select id="filterStatus" title="Filter by Status">
+                    <option value="all selected">All Statuses</option>
+                    <option value="Scheduled">Scheduled</option>
+                    <option value="Confirmed">Confirmed</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Cancelled">Cancelled</option>
+                </select>
+                <input type="text" id="searchPatient" placeholder="Search by Patient Name" title="Search by Patient Name">
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Patient Name</th>
+                            <th>Doctor Name</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Reason</th>
+                            <th>Status</th>
+                            <th>Booked On</th>
+                            <th id="actionsHeader">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="appointmentsTableBody">
+                        <!-- Appointments will be loaded here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <p id="appointmentsMessage" class="message"></p>
+        </section>
+    </div> <!-- End of mainContent -->
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Clinic Management System | All Rights Reserved</p>
+    </footer>
+
+    <!-- JavaScript files -->
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/guard.js"></script>
+    <script type="module" src="js/navbar.js"></script> <!-- NEW: Add this line -->
+    <script type="module" src="js/view_appointment.js"></script> <!-- THIS IS THE NEW JS FILE -->
+</body>
+</html>

@@ -1,0 +1,273 @@
+/* Reset - Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* HTML and Body Base Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, #0f172a, #1e3a8a); /* Background consistent across pages */
+}
+
+/* Body Background and Layout (Essential for footer at bottom) */
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex; /* Use flexbox for overall layout */
+    flex-direction: column; /* Stack children vertically */
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+}
+
+/* Navbar - Consistent Styling (similar to common styles) */
+nav {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav .logo {
+    font-weight: bold;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    display: block;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #38bdf8;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    transform: scale(1.05);
+}
+
+/* Dropdown Menu - Consistent Styling */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    min-width: 160px;
+    width: auto;
+    height: auto;
+    z-index: 1000;
+}
+
+.dropdown-menu li {
+    padding: 8px 20px;
+    white-space: nowrap;
+}
+
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu li a:hover {
+    background-color: rgba(56, 189, 248, 0.2);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Main Content Wrapper (id="mainContent") */
+#mainContent {
+    flex: 1; /* Makes main content take available space */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers horizontally */
+    padding: 20px;
+    max-width: 1200px; /* Wider for table */
+    margin: 0 auto; /* Centers the main content block */
+    width: 100%;
+}
+
+/* Page Header */
+.page-header {
+    text-align: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page-header h1 {
+    font-size: 2.2rem;
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.8);
+}
+
+/* Prescription List Section */
+.prescription-list-section {
+    width: 100%;
+    background: #1a2a4b; /* Solid dark blue background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Filter Controls */
+.filter-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center; /* Center search and filter */
+}
+
+.filter-controls input[type="text"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(255,255,255,0.3);
+    background-color: rgba(0,0,0,0.2);
+    color: white;
+    outline: none;
+    flex: 1; /* Take up available space */
+    max-width: 300px; /* Limit width */
+}
+
+.filter-controls button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-controls button:hover {
+    background-color: #0056b3;
+}
+
+/* Table Styling */
+.table-container {
+    overflow-x: auto; /* Enable horizontal scrolling on small screens */
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+table th {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #61dafb;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+table td {
+    color: #e0f2f7;
+    word-wrap: break-word; /* Prevents long text from overflowing */
+    max-width: 200px; /* Limits cell width */
+}
+
+/* Message Display */
+.message {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Footer - Consistent Styling */
+footer {
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    color: #e2e8f0;
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .filter-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .filter-controls input {
+        max-width: none;
+    }
+    table thead {
+        display: none; /* Hide header on small screens */
+    }
+    table, table tbody, table tr, table td {
+        display: block; /* Make table elements behave like blocks */
+        width: 100%;
+    }
+    table tr {
+        margin-bottom: 15px;
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 5px;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    table td:before {
+        content: attr(data-label); /* Use data-label for pseudo-headers */
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+        color: #61dafb;
+    }
+    /* Add data-label to td in HTML for responsive table if needed */
+}
